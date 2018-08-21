@@ -1,0 +1,15 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="iot.device">
+			<EntityType Name="IOT_DEVICE_DATAType">
+				<Key><PropertyRef Name="DEV_DATA_ID"/></Key><Property Name="DEV_DATA_ID" Type="Edm.String" Nullable="false" MaxLength="2147483647"/><Property Name="G_DEVICE" Type="Edm.String" MaxLength="255"/><Property Name="G_CREATED" Type="Edm.DateTime"/><Property Name="C_WEIGHT" Type="Edm.Double"/><Property Name="C_DISTANCE" Type="Edm.Double"/></EntityType>
+			<EntityType Name="IOT_MAPType">
+				<Key><PropertyRef Name="ID_VSP"/><PropertyRef Name="G_DEVICE"/></Key><Property Name="ID_VSP" Type="Edm.Int32" Nullable="false"/><Property Name="G_DEVICE" Type="Edm.String" Nullable="false" MaxLength="255"/></EntityType>
+			<EntityType Name="IOT_ITEMType">
+				<Key><PropertyRef Name="ID_VSP"/><PropertyRef Name="ID_MATERIAL"/><PropertyRef Name="DATE"/><PropertyRef Name="DEB_KRE"/></Key><Property Name="ID_VSP" Type="Edm.Int32" Nullable="false"/><Property Name="ID_MATERIAL" Type="Edm.Int32" Nullable="false"/><Property Name="DATE" Type="Edm.DateTime" Nullable="false"/><Property Name="DEB_KRE" Type="Edm.String" Nullable="false" MaxLength="1"/><Property Name="QUANTITY" Type="Edm.Double"/></EntityType>
+			<EntityContainer Name="device" m:IsDefaultEntityContainer="true"><EntitySet Name="IOT_DEVICE_DATA" EntityType="iot.device.IOT_DEVICE_DATAType"/><EntitySet Name="IOT_MAP" EntityType="iot.device.IOT_MAPType"/><EntitySet Name="IOT_ITEM" EntityType="iot.device.IOT_ITEMType"/></EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
